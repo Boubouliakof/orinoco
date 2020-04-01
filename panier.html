@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>nounours</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+   
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Orinoco</h1>
+      <div class="search">
+          <input type="search" value placeholder="Que recherchez-vous ?">
+          <button>recherche</button>
+      </div>
+      <nav>
+         <ul>
+             <li>
+                  <a href="panier.html">
+                      <span class="fas fa-shopping-cart fa-2x"></span>
+                  panier
+                  </a>
+              </li>
+              <li>
+                  <a href="commande.html">
+                      <span class="fas fa-box-open fa-2x"></span>
+                  commande
+                  </a>
+              </li>
+         </ul>
+      </nav>
+  </header>
+  <main>
+    <h2 id="title"></h2>
+    <div id="ourson">
+    </div>
+	<form>
+		<p><label>Nom</label></p>
+		<p><input id="nom" name="nom" type="text" required></p>
+		<p><label>Prénom</label></p>
+        <p><input id="prenom" name="prenom" type="text" required></p>
+        <p><label>Téléphone</label></p>
+        <p><input id="telephone" name="telephone" type="tel" required></p>
+        <p><label>Email</label></p>
+        <p><input id="email" name="email" type="email" required></p>
+        <p><label>Adresse</label></p>
+        <p><input id="adresse" name="adresse" type="text" required></p>
+        <p><label>Code postal</label></p>
+		<p><input id="cp" name="cp" type="number" required></p>
+		<p><label>Ville</label></p>
+		<p><input id="ville" name="ville" type="text" required></p>
+		<p>
+			<input type="button" value="Valider mes achats" id="stockage">
+			<input type="reset" value="Effacer tout">
+		</p>
+	</form>
+    </main> 
+     <script src="panier.js"></script>
+
+  </body>
+</html>
