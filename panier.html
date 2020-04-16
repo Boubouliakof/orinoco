@@ -6,6 +6,7 @@
     <title>nounours</title>
 
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
    
   </head>
@@ -13,23 +14,20 @@
   <body>
 
     <header>
-      <h1>Orinoco</h1>
-      <div class="search">
-          <input type="search" value placeholder="Que recherchez-vous ?">
-          <button>recherche</button>
-      </div>
+      <h1><a href="index.html"> Orinoco</a></h1>
       <nav>
          <ul>
              <li>
                   <a href="panier.html">
-                      <span class="fas fa-shopping-cart fa-2x"></span>
-                  panier
-                  </a>
+                    <span class="fas fa-shopping-cart fa-2x"></span>
+                    panier
+                    <span id="panier">0</span>
+                  </a>    
               </li>
               <li>
                   <a href="commande.html">
-                      <span class="fas fa-box-open fa-2x"></span>
-                  commande
+                    <span class="fas fa-box-open fa-2x"></span>
+                    commande
                   </a>
               </li>
          </ul>
@@ -37,26 +35,25 @@
   </header>
   <main>
     <h2 id="title"></h2>
-    <div id="ourson">
-    </div>
-	<form>
-		<p><label>Nom</label></p>
-		<p><input id="nom" name="nom" type="text" required></p>
-		<p><label>Prénom</label></p>
-        <p><input id="prenom" name="prenom" type="text" required></p>
-        <p><label>Téléphone</label></p>
-        <p><input id="telephone" name="telephone" type="tel" required></p>
-        <p><label>Email</label></p>
-        <p><input id="email" name="email" type="email" required></p>
-        <p><label>Adresse</label></p>
-        <p><input id="adresse" name="adresse" type="text" required></p>
-        <p><label>Code postal</label></p>
-		<p><input id="cp" name="cp" type="number" required></p>
-		<p><label>Ville</label></p>
-		<p><input id="ville" name="ville" type="text" required></p>
-		<p>
-			<input type="button" value="Valider mes achats" id="stockage">
-			<input type="reset" value="Effacer tout">
+<div id="ourson"></div>
+
+	<form action="commande.html" method="post" name="contact">
+		<p><label>Nom : </label><input id="nom" name="nom" type="text" required></p>
+
+		<p><label>Prénom : </label><input id="prenom" name="prenom" type="text" required></p>
+
+    <p><label>Email : </label><input id="email" name="email" type="email" required></p>
+
+    <p><label>Adresse : </label><input id="adresse" name="adresse" type="text" required></p>
+
+    <p><label>Code postal : </label><input id="cp" name="cp" type="number" required></p>
+
+		<p><label>Ville : </label><input id="ville" name="ville" type="text" required></p>
+
+    <p>
+        <input type="submit" value="Valider mes achats" id="stockage">
+        <input type="button" value="Vider mon panier" id="vidage">
+			  <input type="reset" value="Effacer le formulaire">
 		</p>
 	</form>
     </main> 

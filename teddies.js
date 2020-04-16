@@ -1,4 +1,4 @@
-let teddy;  
+//    Récupération de l'API
 
 var get = function (url) {
     return new Promise(function (resolve, reject) {
@@ -31,16 +31,16 @@ var ours = function (){
       console.log("dans ours() :"+teddies)
     return teddies 
     })
-  
 }
 
+let teddy;  
 console.log('apres get: '+teddy)
 let ourson = document.getElementById('ourson');
 
+  // Affiche la liste des articles
+
 ours().then(function(teddies){
   console.log(teddies)
-
-  // Affiche la liste des articles
 
   teddies.forEach( teddy=>{
   
@@ -65,10 +65,8 @@ ours().then(function(teddies){
     // mise en place des éléments 
 
     ourson.appendChild(article);
-    
     article.appendChild(image);
     article.appendChild(div);
-    
     div.appendChild(nom);
     div.appendChild(price);
     div.appendChild(description);
@@ -76,19 +74,26 @@ ours().then(function(teddies){
     
     console.log(teddy)
 
-    //     mise en localStorage
+    //     mise en stockage
 
     link.addEventListener('click', function() {
-      if(typeof localStorage!='undefined' && JSON) {
+      if(typeof sessionStorage!='undefined' && JSON) {
         var peluche = teddy
-        localStorage.setItem('pelu',JSON.stringify(peluche));
-      } else alert("localStorage n'est pas supporté");
+        sessionStorage.setItem('pelu',JSON.stringify(peluche));
+      } else alert("sessionStorage n'est pas supporté");
     })
 
-    // Envoie des infos à la page produit
+    // Redirection vers la page produit
 
     link.addEventListener('click', function(e){
       window.location.href = "produit.html"
     }) 
   }) 
 })
+function nombreTotalArticles() {
+  let nombreArticles = localStorage.getItem('nombreArticles');
+  if( nombreArticles ) {
+      document.querySelector('#panier').textContent = nombreArticles;
+  }
+}
+nombreTotalArticles()
