@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-
-    <title>nounours</title>
+<html lang="fr">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Liste des produits proposés par Oriteddies">
+  
+    <title>Oriteddies - Produit</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
@@ -11,37 +13,33 @@
   </head>
 
   <body>
-
     <header>
-      <h1><a href="index.html"> Orinoco</a></h1>
-      <div class="search">
-          <input type="search" value placeholder="Que recherchez-vous ?">
-          <button>recherche</button>
-      </div>
+      <h1><a href="index.html"><span class="fas fa-paw"></span> Oriteddies <span class="fas fa-paw"></span></a></h1>
       <nav>
-         <ul>
-             <li>
-              <a href="panier.html">
-                <span class="fas fa-shopping-cart fa-2x"></span>
-                panier
-                <span id="panier">0</span>
-              </a>  
-              </li>
-              <li>
-                  <a href="commande.html">
-                      <span class="fas fa-box-open fa-2x"></span>
-                  commande
-                  </a>
-              </li>
-         </ul>
+        <ul>
+          <li>
+            <a href="index.html">
+              <span class="fas fa-paw"></span>
+              Accueil
+            </a>    
+          </li>
+          <li>
+            <a href="panier.html">
+              <span class="fas fa-shopping-cart"></span>
+              panier
+            </a>    
+          </li>
+        </ul>
       </nav>
-  </header>
+    </header>
+
   <main>
     <h2 id="title"></h2>
-    <div id="produit">
-    </div>
-    </main> 
-     <script src="teddy.js"></script>
-
+    <div id="produit"></div>
+  </main> 
+  <footer>
+    Oriteddies || 2020
+  </footer>
+  <script src="js/teddy.js"></script>
   </body>
 </html>

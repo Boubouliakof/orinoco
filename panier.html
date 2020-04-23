@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-
-    <title>nounours</title>
+<html lang="fr">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Liste des produits proposés par Oriteddies">
+  
+    <title>Oriteddies - panier</title>
 
     <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
    
   </head>
@@ -14,50 +15,49 @@
   <body>
 
     <header>
-      <h1><a href="index.html"> Orinoco</a></h1>
+      <h1><a href="index.html"><span class="fas fa-paw"></span> Oriteddies <span class="fas fa-paw"></span></a></h1>
       <nav>
-         <ul>
-             <li>
-                  <a href="panier.html">
-                    <span class="fas fa-shopping-cart fa-2x"></span>
-                    panier
-                    <span id="panier">0</span>
-                  </a>    
-              </li>
-              <li>
-                  <a href="commande.html">
-                    <span class="fas fa-box-open fa-2x"></span>
-                    commande
-                  </a>
-              </li>
-         </ul>
+        <ul>
+          <li>
+            <a href="index.html">
+              <span class="fas fa-paw"></span>
+              Accueil
+            </a>    
+          </li>
+          <li>
+            <a href="panier.html">
+              <span class="fas fa-shopping-cart"></span>
+              panier
+            </a>    
+          </li>
+        </ul>
       </nav>
-  </header>
+    </header>
+
   <main>
     <h2 id="title"></h2>
-<div id="ourson"></div>
+<div id="basket"></div>
+<div id="total"></div>
 
-	<form action="commande.html" method="post" name="contact">
-		<p><label>Nom : </label><input id="nom" name="nom" type="text" required></p>
 
-		<p><label>Prénom : </label><input id="prenom" name="prenom" type="text" required></p>
+	<form id="formulaire">
+    <label>Prénom: <input class="validation" type="text" name="firstName" id="firstName" required pattern="[a-zA-Z]{3,12}"></label>
+    <label>Nom: <input class="validation" type="text" name="lastName" id="lastName" required pattern="[a-zA-Z]{3,12}"></label></p>
+    <label>Adresse: <input class="validation" type="text" name="address" id="address" required pattern="[a-zA-Z0-9\s]+"></label>
+    <label>Ville: <input class="validation" type="text" name="city" id="city" required pattern="[a-zA-Z0-9\s]+"></label>
+    <label>E-mail: <input type="email" name="email" id="email" required> </label>
 
-    <p><label>Email : </label><input id="email" name="email" type="email" required></p>
+    <button type="submit" id="stockage">Valider mes achats</button>
+    <button type="button"  id="vidage">Vider mon panier</button>
+    <button type="reset" >Effacer le formulaire</button>
 
-    <p><label>Adresse : </label><input id="adresse" name="adresse" type="text" required></p>
-
-    <p><label>Code postal : </label><input id="cp" name="cp" type="number" required></p>
-
-		<p><label>Ville : </label><input id="ville" name="ville" type="text" required></p>
-
-    <p>
-        <input type="submit" value="Valider mes achats" id="stockage">
-        <input type="button" value="Vider mon panier" id="vidage">
-			  <input type="reset" value="Effacer le formulaire">
-		</p>
-	</form>
-    </main> 
-     <script src="panier.js"></script>
+  </form>
+  <div id="erreur"></div>
+  </main> 
+  <footer>
+      Oriteddies || 2020
+  </footer>
+    <script src="js/panier.js"></script>
 
   </body>
 </html>
