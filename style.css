@@ -7,14 +7,12 @@ body {
     font-size: 30px;
     max-width: 500px;
     margin: auto;
-    background-color: #B9E8C7;
 }
 
         /*      header      */
 
 header {
     height: auto;
-    background-color: #B9AEC7;
 }
 h1 {
     font-size: 1.4em;
@@ -93,7 +91,7 @@ img {
 }
 #lien {
     padding: 0 20px 0 20px;
-    background-color: rgb(167, 154, 154);
+    background-color: lightgray;
     border-radius: 20px;
 }
 #formulaire {
@@ -126,18 +124,15 @@ article {
 footer {
     margin-top: 20px;;
     text-align: center;
-    background-color: #B9AEC7;
 }
 
 @media only screen and (min-width: 800px) {
     body {
-        max-width: 1500px;
+        max-width: 800px;
     }
     
     main {
         min-height: 740px;
-        max-width: 800px;
-        margin: auto;
     }
     h1 {
         width: 100%;
