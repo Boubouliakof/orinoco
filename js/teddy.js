@@ -90,12 +90,10 @@ function creationPanier() {
     basket.addEventListener('click', function() {
         if(typeof localStorage!='undefined' && JSON) {
             let paniers = {
-                id:document.getElementById('nom').textContent + "  " + document.getElementById('choix').value,
                 img:teddy.imageUrl,
                 teddyId:teddy._id,
                 nom:document.getElementById('nom').textContent,
                 prix: teddy.price/100,
-                couleur:document.getElementById('choix').value,
                 quantite:1
             }
                 
@@ -115,7 +113,7 @@ function creationPanier() {
             function setItems(){
                 let panier = localStorage.getItem('panier')
                 panier = JSON.parse(panier)
-                let article = paniers.id
+                let article = paniers.nom
                 let prixTotal = localStorage.getItem('prixTotal');
                 prixTotal = parseInt(prixTotal)
                 prix = parseInt(prix)

@@ -27,7 +27,7 @@ function creationPanier(){
 
     let productContainer = document.getElementById("basket");
 
-    if( data == null) {
+    if( data == null ) {
       var div = document.createElement('div')
       div.textContent = "votre panier est vide"
       basket.appendChild(div);
@@ -42,12 +42,9 @@ function creationPanier(){
               
             var div = document.createElement('div')
             var nom = document.createElement('p')
-            nom.textContent = teddy.id
+            nom.textContent = teddy.nom
             var prix = document.createElement('p')
             prix.textContent = 'Prix: ' + teddy.prix + ' €'  
-            var couleur = document.createElement('p')
-            couleur.textContent = 'Couleur : ' + teddy.couleur
-            let qte = teddy.quantite
             var supprime = document.createElement('button')
             supprime.textContent = "supprimer l'article"
             supprime.id = "supprime"
@@ -61,7 +58,6 @@ function creationPanier(){
                     
             div.appendChild(nom);
             div.appendChild(prix);
-            div.appendChild(couleur);
             div.appendChild(supprime)
 
         })  
@@ -74,24 +70,22 @@ function creationPanier(){
 
 function deleteButtons() {
     let deleteButtons = document.querySelectorAll('#basket #supprime');
-    let productName;
-    let productNumbers = localStorage.getItem('nombreArticles');
+    let nomProduit;
     let prixTotal = localStorage.getItem("prixTotal");
-    let cartItems = localStorage.getItem('panier');
-    cartItems = JSON.parse(cartItems);
+    let article = localStorage.getItem('panier');
+    article = JSON.parse(article);
 
-    console.log(cartItems)
+    console.log(article)
 
     for(let i=0; i < deleteButtons.length; i++) {
         deleteButtons[i].addEventListener('click', () => {
-            productName = deleteButtons[i].parentElement.firstChild.textContent;
-            console.log(productName);
-            localStorage.setItem('nombreArticles', productNumbers - cartItems[productName].quantite);
-            localStorage.setItem('prixTotal', prixTotal - ( cartItems[productName].prix * cartItems[productName].quantite));
+          nomProduit = deleteButtons[i].parentElement.firstChild.textContent;
+            console.log(nomProduit);
+            localStorage.setItem('prixTotal', prixTotal - (article[nomProduit].prix));
 
-            delete cartItems[productName];
-            localStorage.setItem('panier', JSON.stringify(cartItems));
-
+            delete article[nomProduit];
+            localStorage.setItem('panier', JSON.stringify(article));
+            window.location.reload()
             creationPanier();
         })
     }
