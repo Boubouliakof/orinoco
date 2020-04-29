@@ -1,15 +1,16 @@
+// Affichage du numéro de commande avec message de remerciement
+
 function commande(){
 
-let data = sessionStorage.getItem('order');
-data = JSON.parse(data);
-let prix = sessionStorage.getItem('prix');
-prix = JSON.parse(prix);
+    let data = sessionStorage.getItem('order');
+    data = JSON.parse(data);
+    let prix = sessionStorage.getItem('prix');
+    prix = JSON.parse(prix);
 
+    console.log(data.orderId);
 
-   console.log(data.orderId)
-
-    var titre = document.getElementById('title')
-    titre.textContent = 'Récapitulatif de votre commande'
+    var titre = document.getElementById('title');
+    titre.textContent = 'Récapitulatif de votre commande';
 
     let productContainer = document.getElementById("recap");
 
@@ -21,14 +22,13 @@ prix = JSON.parse(prix);
 
             <p>Celle-ci a été enregistrée sous le numéro :  ${data.orderId},
             pour un montant total de ${prix} €.</p>
-            
-            <p>Toute l'équipe Oriteddies vous remercie de votre visite.</p>`    
-        })    
+                
+            <p>Toute l'équipe Oriteddies vous remercie de votre visite.</p>`   
+        });    
     } else {
-        var div = document.createElement('div')
-        div.textContent = "Vous n'avez pas encore validé votre commande"
+        var div = document.createElement('div');
+        div.textContent = "Vous n'avez pas encore validé votre commande";
         ourson.appendChild(div);
     }
 }
-
 commande();
