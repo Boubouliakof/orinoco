@@ -9,9 +9,6 @@ function commande(){
 
     console.log(data.orderId);
 
-    var titre = document.getElementById('title');
-    titre.textContent = 'Récapitulatif de votre commande';
-
     let productContainer = document.getElementById("recap");
 
     if( data != null ) {

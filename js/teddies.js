@@ -40,8 +40,6 @@ ours().then(function(teddies){
 
   teddies.forEach( teddy=>{
   
-    var titre = document.getElementById('title');
-    titre.textContent = 'Découvrez notre liste d\'articles';
     var article = document.createElement('article');
     var image = document.createElement('img');
     image.src =  teddy.imageUrl;

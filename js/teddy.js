@@ -31,8 +31,6 @@ console.log(teddy);
 
 function creationPanier() {
     
-    var titre1 = document.getElementById('title');
-    titre1.textContent = 'Fiche du produit';
     var article = document.createElement('article');
     var image = document.createElement('img');
     image.src =  teddy.imageUrl;

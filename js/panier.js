@@ -15,9 +15,6 @@ function affichagePanier(){
       localStorage.clear();
       window.location.reload();
   })
-    
-  var titre = document.getElementById('title');
-  titre.textContent = 'Votre panier';
 
   var total = localStorage.getItem('prixTotal');
   var prixTotal = document.getElementById('total');
@@ -31,7 +28,7 @@ function affichagePanier(){
 
   let productContainer = document.getElementById("basket");
 
-  if( data == null ) {
+  if( data == null || total == 0 ) {
     var div = document.createElement('div');
     div.textContent = "votre panier est vide";
     basket.appendChild(div);
@@ -162,7 +159,6 @@ let email = document.getElementById('email');
 
 function validerForm(event) {
   console.log('ok');
-  achat();
 
   var form_OK = true;
 
@@ -179,6 +175,7 @@ function validerForm(event) {
   if(!form_OK){
   event.preventDefault();
   };
+  achat();
 };
 
 valid.addEventListener('submit', validerForm);
