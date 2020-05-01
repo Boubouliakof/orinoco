@@ -162,16 +162,10 @@ function validerForm(event) {
 
   var form_OK = true;
 
-  if(prenom.value == "" || nom.value == "" || adresse.value == "" || ville.value == "" ) {
+  if(prenom.value == "" || nom.value == "" || adresse.value == "" || ville.value == "" || email.value == "") {
     var form_OK = false; 
   }
 
-  var regex = /^[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*@[a-z0-9]+([_|\.|-]­{1}[a-z0-9]+)*[\.]{1}[a-z]{2,6}$/ ;
-
-  if (regex.exec(email.value) == null) {
-    form_OK = false;
-  };
-  
   if(!form_OK){
   event.preventDefault();
   };
