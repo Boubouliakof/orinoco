@@ -44,7 +44,7 @@
     <label>Prénom: <input class="validation" type="text" name="firstName" id="firstName" required pattern="[a-zA-Z]{3,12}"></label>
     <label>Nom: <input class="validation" type="text" name="lastName" id="lastName" required pattern="[a-zA-Z]{3,12}"></label>
     <label>Adresse: <input class="validation" type="text" name="address" id="address" required pattern="[a-zA-Z0-9\s]+"></label>
-    <label>Ville: <input class="validation" type="text" name="city" id="city" required pattern="[a-zA-Z0-9\s]+"></label>
+    <label>Ville: <input class="validation" type="text" name="city" id="city" required pattern="[a-zA-Z\s]+"></label>
     <label>E-mail: <input type="email" name="email" id="email" required> </label>
 
     <button type="submit" id="stockage">Valider mes achats</button>
@@ -52,7 +52,7 @@
     <button type="reset" >Effacer le formulaire</button>
 
   </form>
-  <div id="erreur"></div>
+
   </main> 
   <footer>
       Oriteddies || 2020
